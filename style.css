@@ -1,0 +1,226 @@
+/* Intégration de la police d'écriture */
+@font-face {
+    font-family: "Helvetica Neue";
+    src: url('fonts/HelveticaNeueLTStdCn.woff') format('woff');
+}
+
+body, .buttona {
+    /* Couleur de fond et d'écriture */
+    background-color: #0097d8;
+    color: #FEFEFE;
+    
+    /* Choix de la police, de sa taille et de son espacement */
+    font-family: 'Helvetica Neue';
+    font-weight: bold;
+    font-size: 4vh;
+    letter-spacing: 0.5vh;
+    
+    /* Centrage de tous les éléments */
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+    
+    /* Évite l'apparition d'une scroll-bar sur téléphone */
+    /*  */
+    overflow: hidden;
+}
+
+/* Positionnage du logo */
+.logo {
+    position: absolute;
+    max-height: 23%;
+    max-width: 23%;
+    left: 50%;
+    top: 12%;
+    transform: translate(-50%, -50%);
+}
+
+/* Positionnage des groupes de textes */
+.text, .text1, .textb, .buttona {
+    position: absolute;
+    white-space: nowrap;
+    left: 50%;
+    top: 33%;
+    transform: translate(-50%, -50%);
+}
+.text1 {top: 27%;}
+.textb, a {
+    top: 52%;
+    color: #FEFEFE;
+    font-size: 2vh;
+    text-align: left;
+    letter-spacing: 0;
+    font-weight: normal;
+    opacity: 0;
+} a {opacity: 1;} 
+
+/* Ne change pas le curseur sur ordinateur */
+a:hover, div:hover {cursor: default;}
+
+/* Donne un style en rapport avec la page */
+.buttona {
+    background: url('images/placeholder.png') no-repeat top left;
+    background-size:contain;
+    padding-left: 6%;
+    top: 43%;
+    font-size: 2vh;
+    font-weight: normal;
+    width: 65%;
+    height: 6%;
+    border: solid 1px #FEFEFE;
+}
+/* Donne un effet de bouton */
+.buttona:hover {cursor: pointer;}
+.buttona:active {border: solid 1px grey;}
+
+/* Changement de la taille de la police d'écriture */
+.t-xl {font-size: 11vh;}
+.t-l {font-size: 9vh;}
+.t-s {font-size: 7vh;}
+.t-xs {font-size: 3vh;}
+
+/* Positionnage de la vidéo */
+.vid {
+    position: absolute;
+    width: 100%;
+    height: 42%;
+    bottom: 0;
+    left: 0;
+}
+
+/* Positionnage de la carte */
+.maps-container {
+    position: absolute;
+    width: 100%;
+    height: 42%;
+    bottom: 0;
+    left: 0;
+}
+
+
+
+/* Animation de la carte */
+.maps {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    animation: mapsa .6s 9s both;
+}
+
+@keyframes mapsa {
+    /* Apparition de la carte */
+    from {top: 110%;}
+    to {top: 0%;}
+}
+
+
+/* Animation d'entrée du texte */
+.e1, .e2, .e3, .e4, .e5, .e6, .e7, .e8, .e9, .e10, .e11 {
+    position: relative;
+    animation: t-enter .7s both;
+}
+/* Délai d'apparition de chaque texte */
+.e2 {animation-delay: .2s;}
+.e3 {animation-delay: .4s;}
+
+.e4 {animation-delay: 2.6s;}
+.e5 {animation-delay: 2.8s;}
+.e6 {animation-delay: 3s;}
+.e7 {animation-delay: 3.2s;}
+
+.e8 {animation-delay: 5.4s;}
+.e9 {animation-delay: 5.6s;}
+.e10 {animation-delay: 5.8s;}
+.e11 {animation-delay: 6s;}
+
+@keyframes t-enter {
+    /* Mouvement du texte */
+    from {left: 150%;}
+    to {left: 0%;}
+    
+    /* Texte invisible avant le début de l'animation */
+    0%{opacity: 0;}
+    1%{opacity: 1;}
+}
+
+
+/* Animation de sortie des groupes de textes */
+.q1, .q2, .q3 {
+    animation: t-quit .5s 2s forwards;
+}
+/* Délai de sortie des groupes de textes */
+.q2 {animation-delay: 5s;}
+.q3 {animation-delay: 7.9s;}
+
+@keyframes t-quit {
+    /* Disparition du texte */
+    from {opacity: 1;}
+    to {opacity: 0;}
+}
+
+
+/* Animation du logo */
+.l-m {
+    animation: l-move .7s 2s forwards;
+}
+
+@keyframes l-move {
+    /* Mouvement du logo */
+    from {left: 50%; top: 12%;}
+    to {left: 0%; top: 0%;}
+    
+    /* Rétrécissement du logo */
+    100%{transform: scaleX(.7) scaleY(.7);}
+}
+
+
+/* Animation des conditions */
+.tb-e {
+    animation: tb-enter 1s 3s forwards;
+}
+
+@keyframes tb-enter {
+    /* Apparition des conditions */
+    from {opacity: 0;}
+    to {opacity: 0.5;}
+}
+
+/* Animation de sortie des conditions */
+.qb {
+    animation: tb-quit .5s 7.9s forwards;
+}
+
+@keyframes tb-quit {
+    /* Disparition des conditions */
+    from {opacity: 0.5;}
+    to {opacity: 0;}
+}
+
+
+/* Animation de l'adresse */
+.ea, .ea1, .ea2, .ea3 {
+    animation: ta-enter 1s 8.2s forwards;
+    opacity: 0;
+}
+.ea1 {animation-delay: 8.4s;}
+.ea2 {animation-delay: 8.6s;}
+.ea3 {animation-delay: 8.8s;}
+
+@keyframes ta-enter {
+    /* Apparition de l'adresse */
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+
+/* 
+    Détails des noms de classes/animations :
+
+    e{x} = Entrée n°x;
+    q{x} = Sortie(quit) n°x;
+
+    %t% = Tout ce qui concerne du texte (text);
+    %l% = Tout ce qui concerne le logo (logo);
+    %b% = Tout ce qui concerne les conditions (bottom);
+    %a% = Tout ce qui concerne l'adresse (address);
+*/
